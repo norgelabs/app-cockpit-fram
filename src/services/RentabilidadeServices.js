@@ -1,12 +1,9 @@
 import axios from 'axios';
-import { split } from 'lodash';
-
-import { addDays } from '../utils/formatTime';
 
 export default class RentabilidadeServices {
     constructor() {
         const cnn = this.axios = axios.create({
-            baseURL: "http://localhost:7142/api",
+            baseURL: process.env.REACT_APP_API_URL,
             headers: {
                 "Content-Type": "application/json;charset=utf-8",
                 "Access-Control-Allow-Origin": "*",
@@ -26,7 +23,7 @@ export default class RentabilidadeServices {
                 dataFinal: dataFinal
             }
         });
-        console.log("-------->>>>", data)
+        //console.log("-------->>>>", data)
         if(data){
             return data;
         }

@@ -3,7 +3,7 @@ import axios from 'axios';
 export default class ExtratosServices {
     constructor() {
         const cnn = this.axios = axios.create({
-            baseURL: "http://localhost:7142/api",
+            baseURL: process.env.REACT_APP_API_URL,
             headers: {
                 "Content-Type": "application/json;charset=utf-8",
                 "Access-Control-Allow-Origin": "*",
@@ -15,8 +15,8 @@ export default class ExtratosServices {
 
     async getExtrato(idCliente, periodo, dataInicial = null, dataFinal = null) {
 
-        console.log("idCliente >>>> ", idCliente);
-        console.log("periodo >>>> ", periodo);
+        // console.log("idCliente >>>> ", idCliente);
+        // console.log("periodo >>>> ", periodo);
         const { data } = await this.axios.get('/GetExtrato', {
             params: {
                 idCliente: idCliente,
@@ -25,7 +25,7 @@ export default class ExtratosServices {
                 dataFinal: dataFinal
             }
         });
-        console.log("-> ", data)
+        //console.log("-> ", data)
         if(data){
             return data;
         }

@@ -3,7 +3,7 @@ import axios from 'axios';
 export default class ClienteServices {
     constructor() {
         const cnn = this.axios = axios.create({
-            baseURL: "http://localhost:7142/api",
+            baseURL: process.env.REACT_APP_API_URL,
             headers: {
                 "Content-Type": "application/json;charset=utf-8",
                 "Access-Control-Allow-Origin": "*",
@@ -18,7 +18,7 @@ export default class ClienteServices {
         const { data } = await this.axios.get('/GetClientes');
 
         if(data){
-            console.log("retorno cliente api ", data);
+            //console.log("retorno cliente api ", data);
             return data;
         }
         else
