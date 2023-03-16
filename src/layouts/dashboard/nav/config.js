@@ -9,33 +9,33 @@ const navConfig = [
   {
     title: 'Posição Consolidada',
     path: '/dashboard/app',
-    icon: icon('ic_user'),
+    icon: icon(''),
   },
   {
     title: 'Carteira',
-    path: '/dashboard/user',
-    icon: icon('ic_analytics'),
+    path: '/dashboard/carteira',
+    icon: icon(''),
   },
   {
     title: 'Investimentos',
     path: '/dashboard/products',
-    icon: icon('ic_cart'),
+    icon: icon(''),
   },
   {
-    title: 'Solicitações',
-    path: '/dashboard/blog',
-    icon: icon('ic_blog'),
+    title: 'Extratos',
+    path: '/dashboard/extratos',
+    icon: icon(''),
   },
-  {
-    title: 'Lançamentos Projetados',
-    path: '/login',
-    icon: icon('ic_lock'),
-  },
-  {
-    title: 'Liquidação',
-    path: '/404',
-    icon: icon('ic_disabled'),
-  },
+  // {
+  //   title: 'Lançamentos Projetados',
+  //   path: '/login',
+  //   icon: icon(''),
+  // },
+  // {
+  //   title: 'Liquidação',
+  //   path: '/404',
+  //   icon: icon(''),
+  // },
 ];
 
 export default navConfig;

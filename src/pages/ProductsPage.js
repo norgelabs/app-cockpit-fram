@@ -27,11 +27,16 @@ export default function ProductsPage() {
       </Helmet>
 
       <Container>
-        <Typography variant="h4" sx={{ mb: 5 }}>
-          Products
+        <Typography variant="h3" sx={{ mb: 5 }}>
+          Investimentos
         </Typography>
+        <Stack direction="row" spacing={1} flexShrink={0} sx={{ my: 1 }}>
+          <Typography variant="subtitle2" sx={{ mb: 5 }}>
+            Página em desenvolvimento
+          </Typography>
+        </Stack>
 
-        <Stack direction="row" flexWrap="wrap-reverse" alignItems="center" justifyContent="flex-end" sx={{ mb: 5 }}>
+        {/* <Stack direction="row" flexWrap="wrap-reverse" alignItems="center" justifyContent="flex-end" sx={{ mb: 5 }}>
           <Stack direction="row" spacing={1} flexShrink={0} sx={{ my: 1 }}>
             <ProductFilterSidebar
               openFilter={openFilter}
@@ -43,7 +48,7 @@ export default function ProductsPage() {
         </Stack>
 
         <ProductList products={PRODUCTS} />
-        <ProductCartWidget />
+        <ProductCartWidget /> */}
       </Container>
     </>
   );

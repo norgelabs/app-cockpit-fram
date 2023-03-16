@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { faker } from '@faker-js/faker';
 // @mui
 import { useTheme } from '@mui/material/styles';
-import { Grid, Container, Typography } from '@mui/material';
+import { Grid, Container, Typography, Stack } from '@mui/material';
 // components
 import Iconify from '../components/iconify';
 // sections
@@ -30,11 +30,17 @@ export default function DashboardAppPage() {
       </Helmet>
 
       <Container maxWidth="xl">
-        <Typography variant="h4" sx={{ mb: 5 }}>
-          Hi, Welcome back
+        <Typography variant="h3" sx={{ mb: 5 }}>
+          Posição Consolidada
         </Typography>
 
-        <Grid container spacing={3}>
+        <Stack direction="row" spacing={1} flexShrink={0} sx={{ my: 1 }}>
+          <Typography variant="subtitle2" sx={{ mb: 5 }}>
+            Página em desenvolvimento
+          </Typography>
+        </Stack>
+
+        {/* <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={3}>
             <AppWidgetSummary title="Weekly Sales" total={714000} icon={'ant-design:android-filled'} />
           </Grid>
@@ -212,7 +218,7 @@ export default function DashboardAppPage() {
               ]}
             />
           </Grid>
-        </Grid>
+        </Grid> */}
       </Container>
     </>
   );

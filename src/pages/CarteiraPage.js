@@ -7,6 +7,7 @@ import {
   Box,
   Card,
   Chip,
+  Divider,
   Grid,
   Table,
   Stack,
@@ -242,38 +243,44 @@ export default function UserPage() {
       </Helmet>
 
       <Container>
-        <Stack direction="row" alignItems="center" justifyContent="left" mb={3}>
-          <SvgColor src={`/assets/icons/navbar/ic_analytics.svg`} sx={{ mb: 1, mr: 1, width: 40, height: 40 }} />
-          {/* <Iconify icon={'eva:trending-up-fill'} sx={{ mb: 1, mr: 1, width: 42, height: 42, color: '#f60' }} /> */}
-          <Typography variant="h3" gutterBottom>
-            Rentabilidade
+        <Stack direction="column" alignItems="left" justifyContent="left" mb={2}>
+          <Stack direction="row" alignItems="left" justifyContent="left">
+            {/*<SvgColor src={`/assets/icons/navbar/ic_analytics.svg`} sx={{ mb: 1, mr: 1, width: 40, height: 40 }} />
+                         <Iconify icon={'eva:trending-up-fill'} sx={{ mb: 1, mr: 1, width: 42, height: 42, color: '#f60' }} /> */}
+            <Typography variant="h3" gutterBottom>
+              Carteira
+            </Typography>
+          </Stack>
+          <Typography variant="subtitle2">
+            Cliente: <b>{cliente.nome}</b>
           </Typography>
         </Stack>
-        <Stack direction="row" alignItems="center" justifyContent="left" mb={3}>
-          <Typography variant="subtitle2">
-            {cliente.nome}
+        <Divider />
+        <Stack direction="row" alignItems="center" justifyContent="left" mb={3} mt={5}>
+          <Typography variant="h4">
+            Rentabilidade
           </Typography>
         </Stack>
         <Stack mb={2} direction="row" alignItems="center" justifyContent="space-between">
           <Grid container spacing={3}>
             <Grid item xs={12} sm={4} md={2}>
-              <AppWidgetSummary title="Diária" total={rentDiaria ? rentDiaria+'%' : '-'} icon={'ant-design:android-filled'} />
+              <AppWidgetSummary title="Diária" total={rentDiaria ? rentDiaria + '%' : '-'} icon={'ant-design:android-filled'} />
             </Grid>
 
             <Grid item xs={12} sm={4} md={2}>
-              <AppWidgetSummary title="No mês" total={rentMes ? rentMes+'%' : '-'} color="info" icon={'ant-design:apple-filled'} />
+              <AppWidgetSummary title="No mês" total={rentMes ? rentMes + '%' : '-'} color="info" icon={'ant-design:apple-filled'} />
             </Grid>
 
             <Grid item xs={12} sm={4} md={2}>
-              <AppWidgetSummary title="No ano" total={rentAno ? rentAno+'%' : '-'} color="warning" icon={'ant-design:windows-filled'} />
+              <AppWidgetSummary title="No ano" total={rentAno ? rentAno + '%' : '-'} color="warning" icon={'ant-design:windows-filled'} />
             </Grid>
 
             <Grid item xs={12} sm={4} md={2}>
-              <AppWidgetSummary title="12 meses" total={rent12meses ? rent12meses+'%' : '-'} color="error" icon={'ant-design:bug-filled'} />
+              <AppWidgetSummary title="12 meses" total={rent12meses ? rent12meses + '%' : '-'} color="error" icon={'ant-design:bug-filled'} />
             </Grid>
 
             <Grid item xs={12} sm={4} md={2}>
-              <AppWidgetSummary title="Todo o período" total={rentInicio ? rentInicio+'%' : '-'} icon={'ant-design:bug-filled'} />
+              <AppWidgetSummary title="Todo o período" total={rentInicio ? rentInicio + '%' : '-'} icon={'ant-design:bug-filled'} />
             </Grid>
           </Grid>
 
@@ -289,10 +296,10 @@ export default function UserPage() {
 
         <Stack mt={5} direction="column" alignItems="left" justifyContent="start">
           <Stack mb={2} direction="column" alignItems="left" justifyContent="start">
-            <Typography variant="h5"> Pesquisar rentabilidade por período </Typography>
+            <Typography variant="h6"> Pesquisar rentabilidade por período </Typography>
           </Stack>
           <Stack mb={2} direction="row" alignItems="left" justifyContent="start">
-            <form onSubmit={handleSubmit} style={{display: 'flex'}}>
+            <form onSubmit={handleSubmit} style={{ display: 'flex' }}>
               <SelectDate label="Data inicial" name="dataInicial" />
               <Typography variant="h6" ml={2} mr={2} mt={2}> a </Typography>
               <SelectDate label="Data final" name="dataFinal" />
@@ -311,7 +318,7 @@ export default function UserPage() {
                 minWidth: 200,
               }}
             >
-              <Typography variant="h3" ml={2} mr={2} mt={1} color="green">{rentPeriodo ? rentPeriodo+'%' : '-'}</Typography>
+              <Typography variant="h3" ml={2} mr={2} mt={1} color="green">{rentPeriodo ? rentPeriodo + '%' : '-'}</Typography>
             </Box>
           </Stack>
         </Stack>
